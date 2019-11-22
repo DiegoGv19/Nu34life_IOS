@@ -57,7 +57,7 @@ class CrearNutricionista: UIViewController {
     @IBAction func btnCrear(_ sender: Any) {
         let delegado = UIApplication.shared.delegate as! AppDelegate
         let url = delegado.urlServicio + "/nutritionists"
-        var parametros:Parameters = ["birthdate":txtFechaNacimiento.text!,"email":txtCorreoElectronico.text!,"lastName":txtApellido.text!,"name":txtNombre.text!,"password":txtContraseña.text!,"phone":txtNumeroCelular.text!]
+        let parametros:Parameters = ["birthdate":txtFechaNacimiento.text!,"email":txtCorreoElectronico.text!,"lastName":txtApellido.text!,"name":txtNombre.text!,"password":txtContraseña.text!,"phone":txtNumeroCelular.text!]
         request(url, method: .post, parameters: parametros, encoding: JSONEncoding.default, headers: nil)
             .responseJSON(completionHandler: {
                 (resulatado) in

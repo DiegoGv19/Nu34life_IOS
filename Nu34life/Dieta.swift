@@ -15,56 +15,67 @@ var platosComer: [Platos] = []
 var myPlato = 0
 
 class Dieta: UIViewController {
-    var platos: [Platos] = []
 
     @IBOutlet weak var labelDia: UILabel!
     @IBOutlet weak var labelHorario: UILabel!
     @IBOutlet weak var TablaPlatosDieta: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         platosComer = []
        
         labelDia.text = Dias[myDia]
         labelHorario.text = Horas[myHoras]
-        TablaPlatosDieta.delegate = self
-        TablaPlatosDieta.dataSource = self
+        
         
         CargarIdPlatos()
+        TablaPlatosDieta.delegate = self
+        TablaPlatosDieta.dataSource = self
     }
     
 
    private func CargarIdPlatos(){
          
-    let delegado = UIApplication.shared.delegate as! AppDelegate
+        let delegado = UIApplication.shared.delegate as! AppDelegate
     
     
-    let url = delegado.urlServicio + "/plans/patient/" + pacientes[myIndex].id + "?turn=" + Horas[myHoras] + "&day=" + Dias[myDia]
-    request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: {
-    (data) in
-    switch(data.result){
-        case .success( _):
-            let jsons = try! JSON(data: data.data!)
-            jsons.array?.forEach({ (json) in
-            let delegadod = UIApplication.shared.delegate as! AppDelegate
-            let url = delegadod.urlServicio + "/recipes/" + json["recipeId"].stringValue
-            request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers:nil).responseJSON(completionHandler: {(data) in
-                switch(data.result){
-                    case .success( _):
-                        let jsond = try! JSON(data: data.data!)
-                        let platonew = Platos(nombre: jsond["name"].stringValue, id: json["recipeId"].stringValue)
-                        self.platos.append(platonew)
-
-                    case .failure(let error):
+        let url = delegado.urlServicio + "/plans/patient/" + pacientes[myIndex].id + "?turn=" + Horas[myHoras] + "&day=" + Dias[myDia]
+        request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: {
+            (data) in
+            switch(data.result){
+                case .success( _):
+                    
+                    let jsons = try! JSON(data: data.data!)
+                    jsons.array?.forEach({ (json) in
+                    let delegado = UIApplication.shared.delegate as! AppDelegate
+                        let idaux:String =  json["recipeId"].stringValue
+                        let idPlan:String = json["id"].stringValue
+                        
+                    let url = delegado.urlServicio + "/recipes"
+                    request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: {
+                    (data) in
+                    switch(data.result){
+                        case .success( _):
+                             let jsons = try! JSON(data: data.data!)
+                            jsons.array?.forEach({ (json) in
+                                if idaux.elementsEqual(json["id"].stringValue){
+                                    let platonew = Platos(nombre: json["name"].stringValue, id: json["id"].stringValue,idPlan: idPlan)
+                                    platosComer.append(platonew)
+                                }
+                            })
+                             self.TablaPlatosDieta.reloadData()
+                              
+                        case .failure(let error):
                             print(error)
                         }
                         })
-            })
-            platosComer = self.platos
-            self.TablaPlatosDieta.reloadData()
-
-        case .failure(let error):
-            print(error)
-        }
+                        
+                    })
+                    self.TablaPlatosDieta.reloadData()
+                case .failure(let error):
+                    print(error)
+            }
         })
     
      }

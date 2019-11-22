@@ -15,9 +15,11 @@ class Platos{
     
     var nombre: String
     var id: String
-    init(nombre:String,id:String) {
+    var idPlan: String
+    init(nombre:String,id:String,idPlan:String) {
         self.nombre=nombre
         self.id=id
+        self.idPlan=idPlan
     }
     
     

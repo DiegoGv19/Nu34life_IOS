@@ -5,10 +5,8 @@ var Dias = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Dimingo"]
 var myDia = 0
 
 class DietaDias: UIViewController {
+    
     @IBOutlet weak var TableDias: UITableView!
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         TableDias.delegate = self

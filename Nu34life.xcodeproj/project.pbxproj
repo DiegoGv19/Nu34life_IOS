@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8913F5E22387BC970080ECCA /* DietaAgregarPlato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913F5E12387BC970080ECCA /* DietaAgregarPlato.swift */; };
+		8913F5E42387BFD10080ECCA /* DietaEliminarPlato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8913F5E32387BFD10080ECCA /* DietaEliminarPlato.swift */; };
 		894552B72382704100E46AFC /* MainNutricionista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894552B62382704100E46AFC /* MainNutricionista.swift */; };
 		8962AB8A2385D434001B7D1C /* MainNutricionistaPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962AB892385D434001B7D1C /* MainNutricionistaPaciente.swift */; };
 		8962AB902385EE10001B7D1C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962AB8F2385EE10001B7D1C /* State.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		5AFB0284D91492557DE19C2D /* Pods_Nu34life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nu34life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E6B4B6495551AB1FC2F628 /* Pods-Nu34life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nu34life.release.xcconfig"; path = "Target Support Files/Pods-Nu34life/Pods-Nu34life.release.xcconfig"; sourceTree = "<group>"; };
+		8913F5E12387BC970080ECCA /* DietaAgregarPlato.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DietaAgregarPlato.swift; path = ../DietaAgregarPlato.swift; sourceTree = "<group>"; };
+		8913F5E32387BFD10080ECCA /* DietaEliminarPlato.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaEliminarPlato.swift; sourceTree = "<group>"; };
 		894552B62382704100E46AFC /* MainNutricionista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNutricionista.swift; sourceTree = "<group>"; };
 		8962AB892385D434001B7D1C /* MainNutricionistaPaciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNutricionistaPaciente.swift; sourceTree = "<group>"; };
 		8962AB8F2385EE10001B7D1C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				89C15AD9238630C100D77D30 /* DietaHorario.swift */,
 				89C15ADF238635DA00D77D30 /* Dieta.swift */,
 				89C15AE12386374C00D77D30 /* DietaAgregar.swift */,
+				8913F5E12387BC970080ECCA /* DietaAgregarPlato.swift */,
+				8913F5E32387BFD10080ECCA /* DietaEliminarPlato.swift */,
 				89E7B8DB2381FCE6004B0E81 /* Main.storyboard */,
 				89E7B8E12381FCE8004B0E81 /* Assets.xcassets */,
 				89E7B8E32381FCE8004B0E81 /* LaunchScreen.storyboard */,
@@ -296,6 +302,8 @@
 				897AF6A723835B8100F1E744 /* Paciente.swift in Sources */,
 				8962AB922385F296001B7D1C /* MainNutricionistapacienteEditar.swift in Sources */,
 				89C15AE0238635DA00D77D30 /* Dieta.swift in Sources */,
+				8913F5E22387BC970080ECCA /* DietaAgregarPlato.swift in Sources */,
+				8913F5E42387BFD10080ECCA /* DietaEliminarPlato.swift in Sources */,
 				89C79701238613D5008348FC /* DietaDias.swift in Sources */,
 				89E7B8D62381FCE6004B0E81 /* AppDelegate.swift in Sources */,
 				8962AB8A2385D434001B7D1C /* MainNutricionistaPaciente.swift in Sources */,

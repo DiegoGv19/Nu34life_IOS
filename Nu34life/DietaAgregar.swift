@@ -11,11 +11,13 @@ import Alamofire
 import SwiftyJSON
 var platosAgregar: [Platos] = []
 var myPlatoAgregar = 0
+
 class DietaAgregar: UIViewController {
 
     @IBOutlet weak var labelDia: UILabel!
     @IBOutlet weak var labelHora: UILabel!
     @IBOutlet weak var TablePlatos: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +30,7 @@ class DietaAgregar: UIViewController {
         
         TablePlatos.delegate = self
         TablePlatos.dataSource = self
+        
     }
     
 
@@ -43,17 +46,19 @@ class DietaAgregar: UIViewController {
           case .success( _):
                let jsons = try! JSON(data: data.data!)
               jsons.array?.forEach({ (json) in
-                let platonew = Platos(nombre: json["name"].stringValue, id: json["id"].stringValue)
-                  platosAgregar.append(platonew)
+                let platonew = Platos(nombre: json["name"].stringValue, id: json["id"].stringValue,idPlan: "")
+                    platosAgregar.append(platonew)
               })
                self.TablePlatos.reloadData()
-
+                
           case .failure(let error):
               print(error)
           }
           })
       
        }
+    
+  
 
 }
 

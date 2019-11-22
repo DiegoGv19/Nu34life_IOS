@@ -11,8 +11,8 @@ import Alamofire
 
 class MainNutricionistapacienteEditar: UIViewController {
 
-    @IBOutlet weak var txtPeso: UITextField!
     
+    @IBOutlet weak var txtPeso: UITextField!
     @IBOutlet weak var txtTalla: UITextField!
     
     @IBOutlet weak var txtGlucosa: UITextField!
