@@ -30,7 +30,7 @@ class MainNutricionista: UIViewController {
                     case .success( _):
                         let jsons = try! JSON(data: data.data!)
                         jsons.array?.forEach({ (json) in
-                            let pacientenew = Paciente(name:json["name"].stringValue,lastName:json["lastName"].stringValue,id:json["id"].stringValue,email:json["email"].stringValue,password:json["password"].stringValue,birthdate: "")
+                            let pacientenew = Paciente(name:json["name"].stringValue,lastName:json["lastName"].stringValue,id:json["id"].stringValue,email:json["email"].stringValue,password:json["password"].stringValue,birthdate: "",phone: json["phone"].stringValue)
                             pacientes.append(pacientenew)
     
                         })

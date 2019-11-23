@@ -47,7 +47,7 @@ class CrearPaciente: UIViewController {
         
         let delegado = UIApplication.shared.delegate as! AppDelegate
         let url = delegado.urlServicio + "/nutritionists/" + labelIdNutriPacienteC.text!
-        let parametros:Parameters = ["birthdate":labelFechaPacienteC.text!,"email":labelCorreoPacienteC.text!,"lastName":labelApellidoPacienteC.text!,"name":labelNombrePacienteC.text!,"password":labelContraseñaPacienteC.text!,"phone":labelNombrePacienteC.text!]
+        let parametros:Parameters = ["birthdate":labelFechaPacienteC.text!,"email":labelCorreoPacienteC.text!,"lastName":labelApellidoPacienteC.text!,"name":labelNombrePacienteC.text!,"password":labelContraseñaPacienteC.text!,"phone":labelNumeroPacienteC.text!]
         request(url, method: .post, parameters: parametros, encoding: JSONEncoding.default, headers: nil)
             .responseJSON(completionHandler: {
                 (resulatado) in

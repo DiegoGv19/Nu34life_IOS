@@ -25,6 +25,7 @@
 		89533BAD23890BFE005169FA /* PacientePasosPlatoP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89533BAC23890BFE005169FA /* PacientePasosPlatoP.swift */; };
 		89533BB123890C2C005169FA /* TableViewCellPasosPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89533BB023890C2C005169FA /* TableViewCellPasosPaciente.swift */; };
 		89533BB323891028005169FA /* CrearPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89533BB223891027005169FA /* CrearPaciente.swift */; };
+		89533BB52389173D005169FA /* EnviarMensaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89533BB42389173D005169FA /* EnviarMensaje.swift */; };
 		8962AB8A2385D434001B7D1C /* MainNutricionistaPaciente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962AB892385D434001B7D1C /* MainNutricionistaPaciente.swift */; };
 		8962AB902385EE10001B7D1C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962AB8F2385EE10001B7D1C /* State.swift */; };
 		8962AB922385F296001B7D1C /* MainNutricionistapacienteEditar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962AB912385F296001B7D1C /* MainNutricionistapacienteEditar.swift */; };
@@ -75,6 +76,7 @@
 		89533BAC23890BFE005169FA /* PacientePasosPlatoP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacientePasosPlatoP.swift; sourceTree = "<group>"; };
 		89533BB023890C2C005169FA /* TableViewCellPasosPaciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellPasosPaciente.swift; sourceTree = "<group>"; };
 		89533BB223891027005169FA /* CrearPaciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearPaciente.swift; sourceTree = "<group>"; };
+		89533BB42389173D005169FA /* EnviarMensaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviarMensaje.swift; sourceTree = "<group>"; };
 		8962AB892385D434001B7D1C /* MainNutricionistaPaciente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNutricionistaPaciente.swift; sourceTree = "<group>"; };
 		8962AB8F2385EE10001B7D1C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		8962AB912385F296001B7D1C /* MainNutricionistapacienteEditar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNutricionistapacienteEditar.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				89C15AE12386374C00D77D30 /* DietaAgregar.swift */,
 				8913F5E12387BC970080ECCA /* DietaAgregarPlato.swift */,
 				8913F5E32387BFD10080ECCA /* DietaEliminarPlato.swift */,
+				89533BB42389173D005169FA /* EnviarMensaje.swift */,
 			);
 			name = Nutricionista;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				89C796FF2386135D008348FC /* TableViewCellHorarios.swift in Sources */,
 				89E7B8EF2382017D004B0E81 /* CrearNutricionista.swift in Sources */,
 				897AF69D2382C19700F1E744 /* AgregarNotasNutricionista.swift in Sources */,
+				89533BB52389173D005169FA /* EnviarMensaje.swift in Sources */,
 				8962AB902385EE10001B7D1C /* State.swift in Sources */,
 				8913F5EA238885730080ECCA /* PacienteSalud.swift in Sources */,
 				89533BAD23890BFE005169FA /* PacientePasosPlatoP.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-var pacienteLogin: Paciente = Paciente(name: "", lastName: "", id: "", email: "", password: "",birthdate: "")
+var pacienteLogin: Paciente = Paciente(name: "", lastName: "", id: "", email: "", password: "",birthdate: "",phone: "")
 var ValidarPaciente: Bool = false
 class LoginPaciente: UIViewController {
     @IBOutlet weak var labelPacienteCorreo: UITextField!
