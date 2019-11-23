@@ -1,10 +1,3 @@
-//
-//  MainNutricionista.swift
-//  Nu34life
-//
-//  Created by Diego Guevara on 11/17/19.
-//  Copyright © 2019 Diego Guevara. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -37,9 +30,9 @@ class MainNutricionista: UIViewController {
                     case .success( _):
                         let jsons = try! JSON(data: data.data!)
                         jsons.array?.forEach({ (json) in
-                            let pacientenew = Paciente(name:json["name"].stringValue,lastName:json["lastName"].stringValue,id:json["id"].stringValue,email:json["email"].stringValue,password:json["password"].stringValue)
+                            let pacientenew = Paciente(name:json["name"].stringValue,lastName:json["lastName"].stringValue,id:json["id"].stringValue,email:json["email"].stringValue,password:json["password"].stringValue,birthdate: "")
                             pacientes.append(pacientenew)
-	
+    
                         })
                         self.TablePaciente.reloadData()
                     case .failure(let error):
@@ -70,7 +63,4 @@ extension MainNutricionista: UITableViewDataSource, UITableViewDelegate{
         performSegue(withIdentifier: "seguePaciente", sender: self)
     }
 }
-
-
-
 

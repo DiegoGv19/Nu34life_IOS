@@ -36,7 +36,6 @@ class LoginNutricionist: UIViewController {
                     
                     IdNutricionista = json["id"].stringValue
                     self.navigationToMainInterface()
-                    print(IdNutricionista)
                     
                 case .failure( _):
                     self.mostrarCuadroDialogo(titulo: "ERRO", mensaje: "El usuario no esta registrado.")
@@ -44,26 +43,14 @@ class LoginNutricionist: UIViewController {
             })
     }
     
-    /*@IBAction func txtCorreo(_ sender: Any) {
-        self.resignFirstResponder()
-
-    }
-    @IBAction func txtContraseña(_ sender: Any) {
-        self.resignFirstResponder()
-
-    }*/
+  
     func mostrarCuadroDialogo(titulo:String,mensaje:String){
            let ventana = UIAlertController(title: titulo, message: mensaje, preferredStyle: .alert)
            let botonOK = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
            ventana.addAction(botonOK)
            self.present(ventana, animated:true, completion:nil)
        }
-/*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var mainNutricionista = segue.destination as! MainNutricionista
-        mainNutricionista.id = self.idEnviar
-    }
-  */
+
     private func navigationToMainInterface(){
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let mainNutricionista = mainStoryboard.instantiateViewController(withIdentifier: "MainNutricionista") as? MainNutricionista else{

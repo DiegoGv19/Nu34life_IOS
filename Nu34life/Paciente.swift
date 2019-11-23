@@ -14,13 +14,14 @@ class Paciente{
     var id: String
     var email:String
     var password:String
-    
-    init(name:String,lastName:String,id:String,email:String, password:String) {
+    var birthdate:String
+    init(name:String,lastName:String,id:String,email:String, password:String,birthdate:String) {
         self.name=name
         self.lastName=lastName
         self.id=id
         self.email=email
         self.password=password
+        self.birthdate=birthdate
     }
 }
 

@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-514" y="1104"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Paciente-->
         <scene sceneID="uaY-L9-2Rm">
             <objects>
-                <viewController id="2VX-on-BEG" sceneMemberID="viewController">
+                <viewController id="2VX-on-BEG" customClass="LoginPaciente" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Rp-RX-fMm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Iniciar Sesion"/>
                                 <connections>
-                                    <segue destination="CLx-7p-qOI" kind="show" id="6mf-qS-5qf"/>
+                                    <action selector="btnIniciarSesionPaciente:" destination="2VX-on-BEG" eventType="touchUpInside" id="Bqv-SH-0Sk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4w-OA-Z09">
@@ -110,6 +110,10 @@
                         <viewLayoutGuide key="safeArea" id="pmp-tw-Jh0"/>
                     </view>
                     <navigationItem key="navigationItem" id="le0-S6-fYM"/>
+                    <connections>
+                        <outlet property="labelPacienteContraseña" destination="Q2Q-uO-wHr" id="6Lf-bk-OJV"/>
+                        <outlet property="labelPacienteCorreo" destination="kGq-EH-5Ek" id="gyw-Mg-5o5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gm4-wo-Wzp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,14 +122,13 @@
         <!--Perfil-->
         <scene sceneID="RHb-PV-ykU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3i6-Nb-NSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="b9S-nc-U3e" sceneMemberID="viewController">
+                <viewController id="b9S-nc-U3e" customClass="PacientePerfil" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ZD-pD-cXA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Nn-74-lcC">
-                                <rect key="frame" x="118" y="122.5" width="205" height="100"/>
+                                <rect key="frame" x="105" y="100.5" width="205" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3De-fK-ZBX">
@@ -164,7 +167,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Zt-DZ-eXX">
-                                <rect key="frame" x="34" y="481" width="154" height="39"/>
+                                <rect key="frame" x="34" y="481" width="346" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
@@ -198,29 +201,68 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5B8-ms-Pva">
+                                <rect key="frame" x="20" y="775" width="101" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Salud" image="heart.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6Ab-n0-QIB" kind="show" id="QDS-Yb-chh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSW-56-zkl">
+                                <rect key="frame" x="270" y="775" width="124" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Comida" image="book.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Uzu-aQ-E0o" kind="show" id="VTe-fe-kc0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiY-8i-54J">
+                                <rect key="frame" x="145" y="774" width="96" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Perfil" image="person.circle.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="cDb-AW-NvJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" image="person.circle.fill" catalog="system" id="sQy-aw-4TZ"/>
+                    <navigationItem key="navigationItem" id="Eej-er-e83"/>
+                    <connections>
+                        <outlet property="labelPacienteApellidoP" destination="yfm-kk-ohG" id="8k5-I7-0vm"/>
+                        <outlet property="labelPacienteContraseñaP" destination="Ccs-i5-UGx" id="eQc-Er-TG2"/>
+                        <outlet property="labelPacienteCorreoP" destination="4Zt-DZ-eXX" id="5zd-6e-lcT"/>
+                        <outlet property="labelPacienteFechaP" destination="80T-0u-V2t" id="o8h-HP-WCb"/>
+                        <outlet property="labelPacienteNombreP" destination="32u-Qs-yqj" id="ZL5-d5-x8t"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3i6-Nb-NSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="1663"/>
+            <point key="canvasLocation" x="1821.7391304347827" y="1569.6428571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Paciente HorarioP-->
         <scene sceneID="FgX-1u-fw6">
             <objects>
-                <viewController id="vhO-sK-lcs" sceneMemberID="viewController">
+                <viewController id="vhO-sK-lcs" customClass="PacienteHorarioP" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5of-5t-f3j">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q9s-Xd-YeM">
-                                <rect key="frame" x="20" y="106" width="374" height="728"/>
+                                <rect key="frame" x="20" y="62" width="374" height="746"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TlK-sM-NKM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellPacienteHorarioP" id="TlK-sM-NKM" customClass="TableViewCellPacienteHorario" customModule="Nu34life" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TlK-sM-NKM" id="w12-MC-z1s">
@@ -228,7 +270,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKJ-OB-Q47">
-                                                    <rect key="frame" x="20" y="32" width="346" height="39"/>
+                                                    <rect key="frame" x="14" y="23" width="346" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <nil key="textColor"/>
@@ -236,6 +278,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelPacienteHorarioP" destination="PKJ-OB-Q47" id="A1s-Ln-cJl"/>
+                                            <segue destination="ZxV-sH-JuI" kind="show" identifier="seguePacienteHorarioP" id="O7K-FB-dcN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -244,17 +290,20 @@
                         <viewLayoutGuide key="safeArea" id="Gup-jc-SXe"/>
                     </view>
                     <navigationItem key="navigationItem" id="9I3-eV-nfb"/>
+                    <connections>
+                        <outlet property="TableHorarioPacientePPP" destination="Q9s-Xd-YeM" id="nVs-8n-N7W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xh0-RN-L0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713.04347826087" y="2396.6517857142858"/>
+            <point key="canvasLocation" x="2207.2463768115945" y="2318.9732142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Paciente Plato DietaP-->
         <scene sceneID="VOW-zq-x93">
             <objects>
-                <viewController id="ZxV-sH-JuI" sceneMemberID="viewController">
+                <viewController id="ZxV-sH-JuI" customClass="PacientePlatoDietaP" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qqs-F5-aPq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m3Y-sS-62b">
@@ -262,7 +311,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hNp-Jj-kKb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellPlatoDietaP" id="hNp-Jj-kKb" customClass="TableViewCellPacientePlatosDietaP" customModule="Nu34life" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hNp-Jj-kKb" id="Zco-aN-wq7">
@@ -278,6 +327,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelPlatoDietaPacienteP" destination="76t-D7-XWu" id="iaz-E6-m04"/>
+                                            <segue destination="yTZ-nL-F8l" kind="show" identifier="seguePlatoDietaP" id="SUg-qJ-wso"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -304,17 +357,22 @@
                         <viewLayoutGuide key="safeArea" id="DYE-l7-HoI"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZSt-Mc-1Qq"/>
+                    <connections>
+                        <outlet property="TablePlatosDietaP" destination="m3Y-sS-62b" id="WoO-5r-5Mu"/>
+                        <outlet property="labelDietaDiaP" destination="8yH-JG-cls" id="EVP-pb-Vu7"/>
+                        <outlet property="labelHorarioDietaP" destination="gfQ-Oz-Qjv" id="Ll3-Pb-lUO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGq-Ab-FFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3486.9565217391305" y="2398.6607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Propiedades Plato ElegidoP-->
         <scene sceneID="gx5-wl-v1x">
             <objects>
-                <viewController id="yTZ-nL-F8l" sceneMemberID="viewController">
+                <viewController id="yTZ-nL-F8l" customClass="PropiedadesPlatoElegidoP" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UIA-fV-b2U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="comidasana" translatesAutoresizingMaskIntoConstraints="NO" id="M3X-o5-hRQ">
@@ -441,7 +499,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2do-VY-yA6">
-                                <rect key="frame" x="24" y="780" width="170" height="51"/>
+                                <rect key="frame" x="24" y="757" width="170" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Ingredientes"/>
@@ -450,7 +508,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dis-wF-k5K">
-                                <rect key="frame" x="270" y="780" width="82" height="51"/>
+                                <rect key="frame" x="270" y="756" width="82" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Pasos"/>
@@ -463,9 +521,22 @@
                         <viewLayoutGuide key="safeArea" id="O1E-DC-6Vu"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Aw-vl-2T5"/>
+                    <connections>
+                        <outlet property="labelAzucarPEP" destination="SCA-yO-UbP" id="8yE-wE-B4w"/>
+                        <outlet property="labelCarbohidratosPEP" destination="elE-MH-TRu" id="LA0-wl-Wq8"/>
+                        <outlet property="labelDiaPropiedadePEP" destination="cqc-rO-598" id="SCv-C4-Jvf"/>
+                        <outlet property="labelEnergiaPEP" destination="AQ8-2N-Qmu" id="yLV-3Z-8ry"/>
+                        <outlet property="labelHorarioPropiedadePEP" destination="pSq-tc-I1i" id="MqF-Ck-Zra"/>
+                        <outlet property="labelPlatoElegidoPropiedadePEP" destination="jqv-aQ-ENq" id="Zqr-Oh-vYK"/>
+                        <outlet property="labelProteinasPEP" destination="Ih3-W6-lNg" id="Igw-4A-ifb"/>
+                        <outlet property="labelSalPEP" destination="sK6-YK-hGQ" id="QIX-le-L0T"/>
+                        <outlet property="labelSaturatedPEP" destination="8wN-xU-NzI" id="Is5-ZR-Btz"/>
+                        <outlet property="labelTotalPEP" destination="dqc-gq-Y7o" id="M67-Hy-MrL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqo-oA-4AU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carcohydates:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wmN-9T-khk">
+                    <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="textColor"/>
@@ -474,10 +545,10 @@
             </objects>
             <point key="canvasLocation" x="4229" y="2399"/>
         </scene>
-        <!--View Controller-->
+        <!--Paciente IngredientesP-->
         <scene sceneID="G8G-NO-jdl">
             <objects>
-                <viewController id="Anf-vE-6fQ" sceneMemberID="viewController">
+                <viewController id="Anf-vE-6fQ" customClass="PacienteIngredientesP" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bak-Y2-Okn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,7 +583,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="82j-6X-Uve">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIngredientesPlatoSeleccionadoI" id="82j-6X-Uve" customClass="TableViewCellIngredientesPlatoSeleccionado" customModule="Nu34life" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="82j-6X-Uve" id="D3a-dD-Phj">
@@ -528,6 +599,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelIngredientePlatoIII" destination="pe8-rZ-DFc" id="MuK-S1-rNW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -543,15 +617,21 @@
                         <viewLayoutGuide key="safeArea" id="31t-oc-geK"/>
                     </view>
                     <navigationItem key="navigationItem" id="HaZ-tU-brE"/>
+                    <connections>
+                        <outlet property="TableIngredientePlatoI" destination="KRt-Ho-Ash" id="0ng-Zb-bdD"/>
+                        <outlet property="labelIngredientePlatoDia" destination="WWE-hl-PS1" id="I7O-oV-phG"/>
+                        <outlet property="labelIngredientePlatoHorario" destination="QLE-CW-rNC" id="pof-hd-z0w"/>
+                        <outlet property="labelIngredientePlatoNombre" destination="bQh-Ce-gMf" id="1he-yQ-6Ag"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5U-1M-JGH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4229" y="3109"/>
         </scene>
-        <!--View Controller-->
+        <!--Paciente Pasos PlatoP-->
         <scene sceneID="OLb-ab-TCO">
             <objects>
-                <viewController id="t43-EH-1h8" sceneMemberID="viewController">
+                <viewController id="t43-EH-1h8" customClass="PacientePasosPlatoP" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yta-an-amx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -586,7 +666,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ra8-yu-4cg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellPasosPaciente" id="Ra8-yu-4cg" customClass="TableViewCellPasosPaciente" customModule="Nu34life" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ra8-yu-4cg" id="03w-lU-QnB">
@@ -602,6 +682,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelPasoPasiente" destination="nWf-EJ-Tub" id="7EV-mm-OdZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -617,6 +700,12 @@
                         <viewLayoutGuide key="safeArea" id="wna-qj-Wqr"/>
                     </view>
                     <navigationItem key="navigationItem" id="bxF-GA-5Zq"/>
+                    <connections>
+                        <outlet property="TablePasosPaciente" destination="nGw-Zd-NzT" id="aui-cN-YVA"/>
+                        <outlet property="labelPasosDia" destination="1fx-Ni-uSV" id="zfg-tw-nVP"/>
+                        <outlet property="labelPasosHorario" destination="VLH-XJ-u4I" id="MMQ-Ey-hpD"/>
+                        <outlet property="labelPasosNombre" destination="B5s-oV-IRC" id="wPs-2D-X6T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80Y-ur-F2M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -625,10 +714,9 @@
         <!--Salud-->
         <scene sceneID="KZp-Io-KDb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2LQ-as-vGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="6Ab-n0-QIB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PacienteSalud" id="6Ab-n0-QIB" customClass="PacienteSalud" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="osi-oU-0Ig">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AJ-6D-dov">
@@ -684,49 +772,97 @@
                                 <rect key="frame" x="107" y="142" width="205" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpz-ko-KJQ">
+                                <rect key="frame" x="20" y="780" width="101" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Salud" image="heart.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myg-vB-W9K">
+                                <rect key="frame" x="261" y="778" width="133" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Comida" image="book.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Uzu-aQ-E0o" kind="show" id="FhG-Qp-6UU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqr-1o-NgD">
+                                <rect key="frame" x="141" y="778" width="96" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Perfil" image="person.circle.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="b9S-nc-U3e" kind="show" id="MuQ-pD-CP9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="txe-l7-nX7"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Salud" image="heart.fill" catalog="system" id="78t-UW-Tz8"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1874" y="1019"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="xFA-GA-6JR">
-            <objects>
-                <tabBarController id="CLx-7p-qOI" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="lGV-6J-5iq"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JhS-DI-mZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    <navigationItem key="navigationItem" id="Zqg-W7-dQJ"/>
                     <connections>
-                        <segue destination="6Ab-n0-QIB" kind="relationship" relationship="viewControllers" id="zck-Nu-lp5"/>
-                        <segue destination="b9S-nc-U3e" kind="relationship" relationship="viewControllers" id="nhY-BO-ngH"/>
-                        <segue destination="Uzu-aQ-E0o" kind="relationship" relationship="viewControllers" id="y4y-a8-lfg"/>
+                        <outlet property="labelGlucosaP" destination="wWE-vu-UxB" id="BGd-Hh-9Ag"/>
+                        <outlet property="labelNombreP" destination="1AJ-6D-dov" id="cPC-UB-iRb"/>
+                        <outlet property="labelPesoP" destination="5yn-Hk-azP" id="66n-iE-ElO"/>
+                        <outlet property="labelTallaP" destination="DU3-ME-moa" id="H26-xy-RMe"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OW4-rB-ECd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2LQ-as-vGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="1663"/>
+            <point key="canvasLocation" x="2606" y="842"/>
         </scene>
         <!--Comidas-->
         <scene sceneID="sAj-mC-9Nc">
             <objects>
-                <viewController id="Uzu-aQ-E0o" sceneMemberID="viewController">
+                <viewController id="Uzu-aQ-E0o" customClass="PacienteComida" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JsY-BS-xRC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wae-rl-pkz">
+                                <rect key="frame" x="20" y="776" width="101" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Salud" image="heart.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6Ab-n0-QIB" kind="show" id="rXt-uI-GdH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-jp-TJU">
+                                <rect key="frame" x="145" y="776" width="96" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Perfil" image="person.circle.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="b9S-nc-U3e" kind="show" id="cgs-Rs-V1D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7P-O6-CWe">
+                                <rect key="frame" x="269" y="776" width="125" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Comida" image="book.fill" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZUH-zo-wzz">
-                                <rect key="frame" x="20" y="108" width="374" height="680"/>
+                                <rect key="frame" x="20" y="48" width="374" height="682"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JlD-cU-BFt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellDiasPaciente" id="JlD-cU-BFt" customClass="TableViewCellPacienteDia" customModule="Nu34life" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JlD-cU-BFt" id="qwq-ht-NCR">
@@ -734,7 +870,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04k-V6-FFI">
-                                                    <rect key="frame" x="20" y="32" width="346" height="39"/>
+                                                    <rect key="frame" x="14" y="23" width="346" height="39"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <nil key="textColor"/>
@@ -742,6 +878,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelPacienteDiaP" destination="04k-V6-FFI" id="9IK-QB-Sni"/>
+                                            <segue destination="vhO-sK-lcs" kind="show" identifier="seguePacienteDias" id="tf8-hE-M7m"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -750,15 +890,19 @@
                         <viewLayoutGuide key="safeArea" id="HV0-wZ-7s1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Comidas" image="book.fill" catalog="system" id="KCn-zR-woi"/>
+                    <navigationItem key="navigationItem" id="85H-92-D6B"/>
+                    <connections>
+                        <outlet property="TablaPacienteDias" destination="ZUH-zo-wzz" id="CWy-tB-KQl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1W-Cd-TNr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="2397"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="2282.8125"/>
         </scene>
-        <!--View Controller-->
+        <!--Crear Paciente-->
         <scene sceneID="KtL-Nx-zCk">
             <objects>
-                <viewController id="NrQ-IH-xSA" sceneMemberID="viewController">
+                <viewController id="NrQ-IH-xSA" customClass="CrearPaciente" customModule="Nu34life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cUz-er-fik">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -768,6 +912,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="labelNombrePF:" destination="NrQ-IH-xSA" eventType="editingDidEndOnExit" id="WSt-eG-IGM"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de Nacimiento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRv-Wy-zdu">
                                 <rect key="frame" x="48" y="294" width="318" height="47"/>
@@ -775,7 +922,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="txtFechaNacimiento:" destination="kWU-qs-473" eventType="editingDidEndOnExit" id="Hh9-pw-wLX"/>
+                                    <action selector="labelFechaPE:" destination="NrQ-IH-xSA" eventType="editingDidEndOnExit" id="fII-s3-bMe"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="64c-J4-fag">
@@ -783,42 +930,69 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="labelContraseñaPE:" destination="NrQ-IH-xSA" eventType="editingDidEndOnExit" id="Ipy-L8-d2Q"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Celular" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksX-3T-AMe">
                                 <rect key="frame" x="48" y="540" width="318" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="labelNumeroPE:" destination="NrQ-IH-xSA" eventType="editingDidEndOnExit" id="jXy-vE-Q60"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1x-o2-exf">
                                 <rect key="frame" x="169" y="718" width="76" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Crear"/>
+                                <connections>
+                                    <action selector="btnCrearNuevoPaciente:" destination="NrQ-IH-xSA" eventType="touchUpInside" id="gMb-iw-kOy"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electronico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZT6-EY-BjG">
                                 <rect key="frame" x="48" y="376" width="318" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <action selector="labelCorreoPE:" destination="NrQ-IH-xSA" eventType="editingDidEndOnExit" id="9H2-d9-6J9"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id Nutricionista" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-v3-qy0">
                                 <rect key="frame" x="48" y="615" width="318" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="labelIdNutri:" destination="NrQ-IH-xSA" eventType="editingDidEndOnExit" id="f6V-Zy-MWa"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PV1-B6-icJ">
                                 <rect key="frame" x="48" y="217" width="318" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="labelPacientePE:" destination="NrQ-IH-xSA" eventType="editingDidEndOnExit" id="THb-Tr-s5b"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Mar-y0-03Y"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fxc-I6-E92"/>
+                    <connections>
+                        <outlet property="labelApellidoPacienteC" destination="PV1-B6-icJ" id="Av7-8c-sdI"/>
+                        <outlet property="labelContraseñaPacienteC" destination="64c-J4-fag" id="6wn-tZ-UGS"/>
+                        <outlet property="labelCorreoPacienteC" destination="ZT6-EY-BjG" id="IXK-Kj-Tem"/>
+                        <outlet property="labelFechaPacienteC" destination="DRv-Wy-zdu" id="aP1-sb-5C7"/>
+                        <outlet property="labelIdNutriPacienteC" destination="FO6-v3-qy0" id="jNh-Dr-mxy"/>
+                        <outlet property="labelNombrePacienteC" destination="arA-bE-sl4" id="bd6-vG-6jE"/>
+                        <outlet property="labelNumeroPacienteC" destination="ksX-3T-AMe" id="F5j-eC-hRo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHe-QY-jjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2092,4 +2266,9 @@
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VTe-fe-kc0"/>
+        <segue reference="rXt-uI-GdH"/>
+        <segue reference="cgs-Rs-V1D"/>
+    </inferredMetricsTieBreakers>
 </document>
